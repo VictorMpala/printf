@@ -36,6 +36,9 @@ int _printf(const char *format, ...)
 					num_chars = num_chars + _print_str(list);
 				if (*(format + j + 1) == '%')
 					num_chars = num_chars + write(1, &*(format + j + 1), 1);
+				if (*(format + j + 1) == 'i' || *(format + j + 1) == 'd')
+					num_chars = num_chars + _print_int(list);
+
 				j++;
 			}
 			j++;
